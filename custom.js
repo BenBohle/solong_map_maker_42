@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		for (let i = 0; i < height; i++) {
 			const row = [];
 			for (let j = 0; j < width; j++) {
-				row.push(6); // Default Value
+				row.push(0); // Default Value
 			}
 			numberMap.push(row);
 		}
