@@ -1,0 +1,243 @@
+
+/* starts from top to down */
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100vh;
+
+	background-color: #ffffff;
+	opacity: 0.8;
+	background-image: radial-gradient(#a9a9a9 0.55px, #ffffff 0.55px);
+	background-size: 11px 11px;
+}
+
+header {
+	display: flex;
+	z-index: 100;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 10px;
+	padding-left: 30px;
+	padding-right: 30px;
+	color: white;
+	height: 50px;
+}
+
+/* right corner */
+#github-link {
+	/* transition: 1s; */
+	animation: pulse_animation 2s infinite;
+	transition: 1s;
+}
+
+#github-link:hover {
+	transform: scale(1.2);
+	animation: none;
+	transition: 1s;
+}
+
+@keyframes pulse_animation {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+.active-pencil {
+	border: 2px solid rgb(56, 56, 56) !important;
+}
+
+h1 {
+	font-size: 20px;
+	font-family: 'Roboto', sans-serif;
+	color: black;
+}
+
+h3 {
+	font-size: 15px;
+	font-family: 'Roboto', sans-serif;
+	color: black;
+	text-transform: uppercase;
+	margin-left: 4px;
+}
+
+/* --Toolbar-- */
+
+#toolbar {
+	background-color: rgb(250, 250, 254);
+	z-index: 100;
+	position: fixed;
+	left: 0;
+	height: 790px;
+	width: 300px;
+	padding: 10px;
+	box-shadow: #d1d1d1 10px 0px 10px 0px;
+}
+
+.toolbar-item-group {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	padding: 10px;
+}
+
+.toolbar-pencils {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 5px;
+}
+
+.pencil {
+	background-color: rgb(255 255 255);
+	border: 1px solid rgb(184, 184, 184);
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	padding-top: 15px;
+	box-shadow: #969696 0px 0px 4px;
+	padding: 5px;
+	transition: 0.1s;
+}
+
+.pencil:hover {
+	cursor: pointer;
+	transform: scale(1.05);
+	transition: 0.1s;
+}
+
+/* --Beta Tools-- */
+
+.beta-tools {
+	position: fixed;
+	right: 200px;
+	height: 400px;
+	width: 200px;
+	background-color: rgb(255, 255, 255);
+	box-shadow: #d1d1d1 0px 0px 10px 0px;
+}
+
+/* --Inputs-- */
+
+input {
+	padding: 5px;
+	width: 150px;
+}
+
+label {
+	font-size: 15px;
+}
+
+textarea {
+	padding: 5px;
+	width: 266px;
+	max-width: 266px;
+	height: 120px;
+	max-height: 120px;
+}
+
+button {
+	padding: 5px;
+	margin-bottom: 2px;
+	background-color: rgb(255, 255, 255);
+	border: 1px solid rgb(184, 184, 184);
+	transition: 1s;
+}
+
+button:hover {
+	box-shadow: inset 400px 0 10px 0 rgb(12, 179, 0);
+	transition: 1s;
+}
+
+button:focus {
+	box-shadow: inset 400px 0 10px 0 rgb(12, 179, 0);
+	transition: 1s;
+}
+
+#zoom-slider {
+	width:90%;
+}
+
+/* --Game Container-- */
+
+/* Defaults for first load */
+#game-container {
+    display: grid;
+	justify-content: center;
+    grid-template-columns: repeat(10, 50px); /* Anzahl der Spalten */
+    grid-template-rows: repeat(10, 50px); /* Anzahl der Zeilen */
+}
+
+
+.cell {
+    border: 1px solid #b6b6b6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: contain;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+}
+
+
+/* -Objects- */
+
+.player {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/ghost.gif') ,url('img/floor.png');
+    background-size: contain;
+    background-position: center;
+}
+
+.enemy {
+	background-image: url('img/ghost_red.png'), url('img/floor.png');
+}
+
+.goal {
+    background-image: url('img/portal.png'), url('img/floor.png');
+}
+
+.coin {
+	background-image: url('img/coin.png'), url('img/floor.png');
+}
+
+/* --footer-- */
+
+footer {
+	position: fixed;
+	z-index: 100;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 40px;
+	padding-right: 20px;
+	display: flex;
+	justify-content: flex-end;
+	text-decoration: none;
+}
+
+footer a {
+	color: rgb(197, 197, 197);
+	text-decoration: none;
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+}
+
+
