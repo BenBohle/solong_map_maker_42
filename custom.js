@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("nw").addEventListener("change", map_async);
     document.getElementById("nh").addEventListener("change", map_async);
     document.getElementById("generate").addEventListener("click", generate_map_code);
+    document.getElementById("close-modal").addEventListener("click", close_modal);
 
 	// Pencil Selection --> need more pencils like brush
     document.querySelectorAll('.pencil').forEach(function(pencil) {
@@ -16,6 +17,13 @@ document.addEventListener("DOMContentLoaded", function () {
 			this.classList.add('active-pencil');
 		});
 	});
+
+    window.onload = function() {
+        setTimeout(function() {
+          document.getElementById('modal').style.opacity = 1;
+          document.getElementById('modal-content').style.transform = 'translateX(0)';
+        }, 1500);
+      };
 
 
 	// Zoom Slider --> need to be improved, a bit laggy
@@ -43,6 +51,10 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 		return numberMap;
 	}
+
+    function close_modal() {
+        document.getElementById("modal").style.display = "none";
+    }
 
 	// clear all visual cells from the game container
 	function clearCells() {
